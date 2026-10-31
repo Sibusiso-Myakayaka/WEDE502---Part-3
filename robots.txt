@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://github.com/Sibusiso-Myakayaka/WEDE502---Part-3/sitemap.xml

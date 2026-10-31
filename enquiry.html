@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Send a membership, sports, volunteering or sponsorship enquiry to Glen Austin Sports Club in Midrand, Gauteng.">
+
+    <meta name="keywords"
+          content="Glen Austin Sports Club, sports membership, sports enquiries, Midrand Gauteng">
+
+    <meta name="robots" content="index, follow">
+
+    <title>Enquiries | Glen Austin Sports Club</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            Glen Austin Sports Club
+        </a>
+
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="sports.html">Sports &amp; Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="enquiry.html" class="active">Enquiries</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <h1>Make an Enquiry</h1>
+
+        <p>
+            Contact Glen Austin Sports Club about membership,
+            sports, volunteering or sponsorship opportunities.
+        </p>
+    </section>
+
+    <section>
+        <h2>How Can We Help You?</h2>
+
+        <p class="lead">
+            Complete the form below. We will display a response
+            to help you understand the next step.
+        </p>
+
+        <form id="enquiry-form" 
+              class="form-grid"
+              action="https://formspree.io/f/xzeerovl"
+              method="POST">
+
+              <input type="hidden"
+                     name="_subject"
+                     value="New Enquiry - Glen Austin Sports Club">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="60"
+                    autocomplete="name"
+                    placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                   type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+
+                    placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[0-9+() -]{7,20}"
+                    autocomplete="tel"
+                    placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="enquiryType">Type of Enquiry</label>
+
+                <select
+                    id="enquiryType"
+                    name="enquiryType"
+                    required>
+
+                    <option value="">Select an enquiry type</option>
+                    <option value="membership">Membership</option>
+                    <option value="sports">Sports and Training</option>
+                    <option value="volunteering">Volunteering</option>
+                    <option value="sponsorship">Sponsorship</option>
+                    <option value="general">General Enquiry</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Your Enquiry</label>
+
+                <textarea
+                    id="details"
+                    name="details"
+                    rows="5"
+                    required
+                    minlength="10"
+                    placeholder="Tell us what you would like to know..."></textarea>
+            </div>
+            <div class="full-width">
+            <button type="submit" class="btn">
+                Submit Enquiry
+            </button>
+            </div>
+
+        </form>
+
+        <div id="enquiry-response"
+             class="form-response"
+             role="status"
+             aria-live="polite"
+             hidden>
+        </div>
+
+    </section>
+
+    <section class="light-section">
+        <h2>Contact the Club</h2>
+
+        <p>
+            Email:
+            <a href="mailto:info@glenaustinsportsclub.co.za">
+                info@glenaustinsportsclub.co.za
+            </a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+27754405235">+27 75 440 5235</a>
+        </p>
+
+        <p>Location: Glen Austin, Midrand, Gauteng.</p>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-container">
+
+        <h3>Glen Austin Sports Club</h3>
+
+        <p>Community • Discipline • Teamwork</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="sports.html">Sports</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiry.html">Enquiries</a>
+        </div>
+
+        <p>
+            &copy; <span id="year"></span>
+            Glen Austin Sports Club.
+        </p>
+
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

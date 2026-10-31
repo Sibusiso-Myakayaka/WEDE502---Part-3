@@ -1,0 +1,1287 @@
+/* =========================================================
+GLEN AUSTIN SPORTS CLUB
+WEDE5020 PART 1
+Main stylesheet
+========================================================= /
+
+
+/* -------------------------
+Colour Variables
+------------------------- */
+
+:root {
+--green: #2E7D32;
+--dark-green: #18321b;
+--orange: #FF6F00;
+--white: #FFFFFF;
+--cream: #f8faf7;
+--light-green: #eaf3eb;
+--soft-green: #dcebdd;
+--text: #222222;
+--muted: #667166;
+--border: #d6ddd6;
+--max-width: 1200px;
+}
+
+
+/* -------------------------
+General Styling
+------------------------- */
+
+* {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: "Open Sans", Arial, sans-serif;
+line-height: 1.6;
+color: var(--text);
+background-color: var(--white);
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+a {
+color: var(--green);
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+outline: 3px solid var(--orange);
+outline-offset: 2px;
+}
+
+
+/* -------------------------
+Header
+------------------------- */
+
+header {
+background-color: var(--soft-green);
+color: var(--dark-green);
+position: sticky;
+top: 0;
+z-index: 1000;
+border-bottom: 1px solid #cbdaca;
+}
+
+.nav-container {
+max-width: var(--max-width);
+margin: auto;
+padding: 0.8rem 1.5rem;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 2rem;
+}
+
+
+/* Club name */
+
+.logo {
+color: var(--dark-green);
+text-decoration: none;
+
+font-family: "Montserrat", Arial, sans-serif;
+font-weight: 800;
+font-size: 1.2rem;
+letter-spacing: -0.3px;
+}
+
+
+/* -------------------------
+Navigation
+------------------------- */
+
+nav ul {
+list-style: none;
+
+display: flex;
+align-items: center;
+
+gap: 0.3rem;
+
+margin: 0;
+padding: 0;
+}
+
+nav a {
+color: var(--dark-green);
+text-decoration: none;
+
+padding: 0.55rem 0.8rem;
+
+border-radius: 4px;
+
+font-size: 0.95rem;
+
+transition:
+background-color 0.2s ease,
+color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+background-color: var(--orange);
+color: var(--white);
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+display: none;
+
+background: transparent;
+color: var(--dark-green);
+
+border: 1px solid var(--dark-green);
+border-radius: 5px;
+
+padding: 0.45rem 0.7rem;
+
+font-size: 1.2rem;
+cursor: pointer;
+}
+
+
+/* -------------------------
+Hero Section
+------------------------- */
+
+.hero {
+position: relative;
+
+width: 100%;
+height: 78vh;
+min-height: 520px;
+
+overflow: hidden;
+
+background-color: var(--dark-green);
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+/* Large hero image */
+
+.hero-image {
+position: absolute;
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+max-width: none;
+
+filter: brightness(0.65);
+}
+
+
+/* Dark overlay */
+
+.hero::after {
+content: "";
+
+position: absolute;
+
+inset: 0;
+
+background:
+linear-gradient(
+to bottom,
+rgba(0, 0, 0, 0.15),
+rgba(0, 0, 0, 0.55)
+);
+}
+
+
+/* Hero text */
+
+.hero-overlay {
+position: relative;
+
+z-index: 2;
+
+max-width: 900px;
+
+padding: 2rem;
+
+text-align: center;
+
+color: var(--white);
+}
+
+
+/* Small label */
+
+.badge {
+display: inline-block;
+
+margin-bottom: 1rem;
+
+padding: 0.35rem 0.8rem;
+
+border: 1px solid rgba(255, 255, 255, 0.6);
+
+border-radius: 50px;
+
+background-color: rgba(0, 0, 0, 0.2);
+
+font-size: 0.8rem;
+font-weight: 700;
+
+letter-spacing: 2px;
+}
+
+
+/* Main hero heading */
+
+.hero h1 {
+margin: 0;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: clamp(3rem, 7vw, 6rem);
+
+line-height: 1;
+
+font-weight: 700;
+
+text-shadow:
+0 3px 12px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+margin: 1.3rem auto 2rem;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: clamp(1.1rem, 2vw, 1.5rem);
+
+max-width: 700px;
+}
+
+
+/* -------------------------
+Buttons
+------------------------- */
+
+.btn {
+display: inline-block;
+
+background-color: var(--orange);
+
+color: var(--white);
+
+text-decoration: none;
+
+border: 2px solid var(--orange);
+
+padding: 0.75rem 1.3rem;
+
+border-radius: 4px;
+
+font-weight: 700;
+
+cursor: pointer;
+
+margin: 0.25rem;
+
+transition:
+transform 0.2s ease,
+opacity 0.2s ease;
+}
+
+.btn:hover {
+transform: translateY(-2px);
+opacity: 0.9;
+}
+
+.btn-light {
+background-color: transparent;
+
+color: var(--white);
+
+border-color: var(--white);
+}
+
+.btn-light:hover {
+background-color: var(--white);
+color: var(--green);
+}
+
+
+/* -------------------------
+Main Sections
+------------------------- */
+
+main {
+max-width: var(--max-width);
+margin: auto;
+}
+
+section {
+padding: 5rem 1.5rem;
+}
+
+section h1,
+section h2 {
+font-family:
+"Montserrat",
+Arial,
+sans-serif;
+
+color: var(--green);
+}
+
+section h1 {
+font-size: 2.8rem;
+}
+
+section h2 {
+font-size: 2.1rem;
+
+margin-top: 0;
+}
+
+.lead {
+font-size: 1.15rem;
+color: var(--muted);
+}
+
+
+/* Full-width light sections */
+
+.light-section {
+background-color: var(--light-green);
+
+max-width: none;
+
+padding-left:
+max(1.5rem,
+calc((100vw - var(--max-width)) / 2));
+
+padding-right:
+max(1.5rem,
+calc((100vw - var(--max-width)) / 2));
+}
+
+
+/* -------------------------
+Page Headers
+------------------------- */
+
+.page-header {
+background-color: var(--light-green);
+
+text-align: center;
+
+padding: 5rem 1.5rem;
+}
+
+.page-header h1 {
+margin-top: 0;
+
+font-family:
+Georgia,
+"Times New Roman",
+serif;
+
+font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.page-header p {
+max-width: 650px;
+
+margin:
+1rem auto 0;
+
+color: var(--muted);
+
+font-size: 1.1rem;
+}
+
+.page-header img {
+max-width: 800px;
+
+width: 100%;
+
+margin:
+2rem auto;
+
+border-radius: 6px;
+}
+
+
+/* -------------------------
+Cards
+------------------------- */
+
+.card-grid {
+display: grid;
+
+grid-template-columns:
+repeat(3, 1fr);
+
+gap: 1.5rem;
+}
+
+.card,
+.sport-card,
+.info-box {
+background-color: var(--white);
+
+border-radius: 6px;
+
+padding: 1.5rem;
+
+border-top:
+4px solid var(--orange);
+
+box-shadow:
+0 4px 15px rgba(0, 0, 0, 0.06);
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.card:hover,
+.sport-card:hover,
+.info-box:hover {
+transform: translateY(-4px);
+
+box-shadow:
+0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.card h3,
+.sport-card h2,
+.info-box h2 {
+color: var(--green);
+
+margin-top: 0;
+}
+
+
+/* Sport images */
+
+.sport-card img {
+width: 100%;
+
+height: 220px;
+
+object-fit: cover;
+
+border-radius: 4px;
+
+margin-bottom: 1rem;
+}
+
+.sport-content {
+padding: 0.2rem;
+}
+
+
+/* -------------------------
+Two Column Layout
+------------------------- */
+
+.two-column {
+display: grid;
+
+grid-template-columns:
+repeat(2, 1fr);
+
+gap: 2rem;
+}
+
+
+/* -------------------------
+Lists
+------------------------- */
+
+.feature-list {
+padding-left: 1.5rem;
+}
+
+.feature-list li {
+margin-bottom: 0.5rem;
+}
+
+
+/* -------------------------
+Fixtures Table
+------------------------- */
+
+.table-container {
+overflow-x: auto;
+}
+
+table {
+width: 100%;
+
+border-collapse: collapse;
+
+background-color: var(--white);
+}
+
+th,
+td {
+padding: 0.9rem;
+
+border:
+1px solid var(--border);
+
+text-align: left;
+}
+
+th {
+background-color: var(--green);
+
+color: var(--white);
+}
+
+
+/* -------------------------
+Forms
+------------------------- */
+
+.form-grid {
+display: grid;
+
+grid-template-columns:
+repeat(2, 1fr);
+
+gap: 1rem;
+}
+
+.form-group {
+display: flex;
+
+flex-direction: column;
+
+gap: 0.35rem;
+}
+
+.full-width {
+grid-column: 1 / -1;
+}
+
+label {
+font-weight: 700;
+}
+
+input,
+select,
+textarea {
+font: inherit;
+
+padding: 0.8rem;
+
+border:
+1px solid #8a978b;
+
+border-radius: 4px;
+
+background-color: var(--white);
+}
+
+textarea {
+min-height: 150px;
+
+resize: vertical;
+}
+
+
+/* -------------------------
+Gallery
+------------------------- */
+
+.gallery-grid {
+display: grid;
+
+grid-template-columns:
+repeat(3, 1fr);
+
+gap: 1.5rem;
+}
+
+.gallery-card {
+margin: 0;
+
+background-color: var(--light-green);
+
+border-radius: 6px;
+
+overflow: hidden;
+}
+
+.gallery-card img {
+width: 100%;
+
+height: 260px;
+
+object-fit: cover;
+
+transition:
+transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+transform: scale(1.04);
+}
+
+.gallery-card figcaption {
+padding: 1rem;
+}
+
+
+/* -------------------------
+Contact
+------------------------- */
+
+.contact-grid {
+display: grid;
+
+grid-template-columns:
+repeat(2, 1fr);
+
+gap: 2rem;
+}
+
+.map-box {
+background-color: var(--light-green);
+
+min-height: 280px;
+
+border-radius: 6px;
+
+padding: 2rem;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+text-align: center;
+}
+
+
+/* -------------------------
+Notices
+------------------------- */
+
+.notice {
+background-color: #fff7ef;
+
+border-left:
+5px solid var(--orange);
+
+padding: 1rem;
+
+margin: 1rem 0;
+}
+
+
+/* -------------------------
+Video
+------------------------- */
+
+.video-section {
+background-color: var(--white);
+
+text-align: center;
+}
+
+.video-section h2 {
+margin-bottom: 0.5rem;
+}
+
+.video-section p {
+color: var(--muted);
+
+max-width: 700px;
+
+margin:
+0 auto 2rem;
+}
+
+.video-section video {
+display: block;
+
+width: 100%;
+
+max-width: 900px;
+
+margin: 0 auto;
+
+border-radius: 6px;
+
+box-shadow:
+0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* -------------------------
+Call to Action
+------------------------- */
+
+.cta {
+text-align: center;
+
+background-color: var(--green);
+
+color: var(--white);
+
+max-width: none;
+}
+
+.cta h2 {
+color: var(--white);
+}
+
+.cta p {
+max-width: 650px;
+
+margin:
+0 auto 1.5rem;
+}
+
+
+/* -------------------------
+Footer
+------------------------- */
+
+footer {
+background-color: var(--dark-green);
+
+color: var(--white);
+
+padding: 3rem 1.5rem;
+}
+
+.footer-container {
+max-width: var(--max-width);
+
+margin: auto;
+}
+
+.footer-container h3 {
+font-family:
+"Montserrat",
+Arial,
+sans-serif;
+}
+
+.footer-links {
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 1rem;
+
+margin: 1rem 0;
+}
+
+.footer-links a {
+color: var(--white);
+
+text-decoration: none;
+}
+
+.footer-links a:hover {
+color: var(--orange);
+}
+
+
+/* -------------------------
+Responsive Design
+------------------------- */
+
+@media (max-width: 800px) {
+
+.menu-toggle {
+display: block;
+}
+
+nav {
+display: none;
+
+width: 100%;
+}
+
+nav.open {
+display: block;
+}
+
+.nav-container {
+flex-wrap: wrap;
+}
+
+nav ul {
+flex-direction: column;
+
+align-items: stretch;
+
+padding-top: 0.5rem;
+}
+
+nav a {
+display: block;
+}
+
+.card-grid,
+.gallery-grid,
+.two-column,
+.contact-grid {
+grid-template-columns: 1fr;
+}
+
+.form-grid {
+grid-template-columns: 1fr;
+}
+
+.full-width {
+grid-column: auto;
+}
+
+.hero {
+height: 70vh;
+
+min-height: 500px;
+}
+
+.hero h1 {
+font-size: 3rem;
+}
+
+.hero-overlay {
+padding: 1.5rem;
+}
+
+section {
+padding: 3.5rem 1rem;
+}
+}
+
+
+@media (max-width: 500px) {
+
+.nav-container {
+padding:
+0.7rem 1rem;
+}
+
+.logo {
+font-size: 1rem;
+}
+
+.hero {
+height: 75vh;
+
+min-height: 480px;
+}
+
+.hero h1 {
+font-size: 2.5rem;
+}
+
+.hero p {
+font-size: 1rem;
+}
+
+.badge {
+font-size: 0.7rem;
+
+letter-spacing: 1px;
+}
+
+.hero-buttons .btn {
+display: block;
+
+width: 100%;
+
+margin:
+0.5rem auto;
+}
+
+}
+
+/* =========================================================
+MODERN SPORTS PAGE DESIGN
+Inspired by the large image-grid layout
+========================================================= */
+
+
+/* -------------------------
+CLEAN WHITE HEADER
+------------------------- */
+
+header {
+background-color: #FFFFFF;
+color: #222222;
+box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+color: #2E7D32;
+}
+
+nav a {
+color: #222222;
+}
+
+nav a:hover,
+nav a.active {
+background-color: #FF6F00;
+color: #FFFFFF;
+}
+
+
+/* -------------------------
+SPORTS PAGE INTRO
+------------------------- */
+
+.page-header {
+background-color: #FFFFFF;
+text-align: left;
+max-width: 1100px;
+margin: auto;
+padding: 5rem 1rem 3rem;
+}
+
+.page-header h1 {
+font-size: clamp(2.5rem, 6vw, 4.5rem);
+margin-bottom: 1rem;
+color: #222222;
+}
+
+.page-header p {
+font-size: 1.1rem;
+color: #667166;
+max-width: 650px;
+}
+
+
+/* -------------------------
+SPORTS GRID
+------------------------- */
+
+.light-section {
+background-color: #FFFFFF;
+}
+
+.light-section .card-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
+}
+
+
+/* -------------------------
+MODERN SPORT IMAGE CARDS
+------------------------- */
+
+.sport-card {
+position: relative;
+padding: 0;
+min-height: 430px;
+border: none;
+border-top: none;
+border-radius: 0;
+overflow: hidden;
+background-color: #222222;
+box-shadow: none;
+}
+
+
+/* Make the image fill the entire card */
+
+.sport-card img {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+/* Dark gradient over the bottom of the image */
+
+.sport-card::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to top,
+rgba(0, 0, 0, 0.85),
+rgba(0, 0, 0, 0.15) 65%,
+rgba(0, 0, 0, 0)
+);
+}
+
+
+/* Text sits on top of the image */
+
+.sport-content {
+position: absolute;
+z-index: 2;
+left: 0;
+right: 0;
+bottom: 0;
+padding: 2rem;
+color: #FFFFFF;
+}
+
+
+/* Sport title */
+
+.sport-content h2 {
+color: #FFFFFF;
+font-size: 2.2rem;
+margin: 0 0 0.7rem;
+font-family: "Montserrat", Arial, sans-serif;
+}
+
+
+/* Sport description */
+
+.sport-content p {
+color: #FFFFFF;
+margin: 0;
+max-width: 500px;
+font-size: 1rem;
+}
+
+
+/* -------------------------
+HOVER EFFECT
+------------------------- */
+
+.sport-card img {
+transition: transform 0.5s ease;
+}
+
+.sport-card:hover img {
+transform: scale(1.05);
+}
+
+
+/* -------------------------
+SERVICES
+------------------------- */
+
+section:not(.light-section) .card-grid {
+gap: 1rem;
+}
+
+.card {
+border-top: 3px solid #FF6F00;
+border-radius: 0;
+box-shadow: none;
+padding: 2rem;
+}
+
+.card h3 {
+font-size: 1.4rem;
+}
+
+
+/* -------------------------
+MODERN BUTTONS
+------------------------- */
+
+.btn {
+border-radius: 50px;
+padding: 0.75rem 1.4rem;
+transition: all 0.25s ease;
+}
+
+.btn:hover {
+transform: translateY(-2px);
+}
+
+
+/* -------------------------
+CALL TO ACTION
+------------------------- */
+
+.cta {
+margin-top: 3rem;
+padding: 5rem 1rem;
+}
+
+
+/* -------------------------
+MOBILE
+------------------------- */
+
+@media (max-width: 800px) {
+
+.light-section .card-grid {
+grid-template-columns: 1fr;
+}
+
+.sport-card {
+min-height: 380px;
+}
+
+.page-header {
+padding: 3rem 1rem 2rem;
+}
+
+.page-header h1 {
+font-size: 2.7rem;
+}
+
+}
+
+/* ==========================================
+PART 3: INTERACTIVE WEBSITE FEATURES
+========================================== /
+/* Gallery lightbox */
+#gallery-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px;
+}
+
+#gallery-lightbox.lightbox-open {
+    display: flex;
+}
+
+#gallery-lightbox figure {
+    margin: 0;
+    max-width: 850px;
+    width: 80%;
+    text-align: center;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+}
+
+#lightbox-caption {
+    color: #fff;
+    margin-top: 15px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#lightbox-close,
+#lightbox-previous,
+#lightbox-next {
+    background: #2E7D32;
+    color: #fff;
+    border: none;
+    padding: 12px 17px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#lightbox-close:hover,
+#lightbox-previous:hover,
+#lightbox-next:hover {
+    background: #FF6F00;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+@media (max-width: 600px) {
+    #gallery-lightbox {
+        gap: 8px;
+        padding: 12px;
+    }
+
+    #gallery-lightbox figure {
+        width: 75%;
+    }
+
+    #lightbox-previous,
+    #lightbox-next {
+        padding: 8px;
+        font-size: 1.1rem;
+    }
+}
+/* Contact Form Submission Feedback */
+
+.form-response {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.form-response.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+.form-response.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #c62828;
+}
+
+.form-response.loading {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ff6f00;
+}
+
+.form-response[hidden] {
+    display: none;
+}
+
+#contact-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Enquiry form button size */
+#enquiry-form button[type="submit"] {
+    width: auto;
+    min-width: 150px;
+    padding: 12px 24px;
+    justify-self: start;
+}
