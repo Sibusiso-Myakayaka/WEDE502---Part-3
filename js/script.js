@@ -422,27 +422,7 @@ button.getAttribute("aria-expanded") === "true";
 button.setAttribute("aria-expanded", String(!isExpanded));
 panel.hidden = isExpanded;
 });
+ 
 });
- // 10. Interactive map
-const mapElement = document.getElementById("club-map");
-
-if (mapElement && typeof L !== "undefined") {
-
-    const map = L.map("club-map").setView([-25.97, 28.12], 14);
-
-    L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-        {
-            attribution:
-                '&copy; OpenStreetMap contributors &copy; CARTO',
-            subdomains: "abcd",
-            maxZoom: 20
-        }
-    ).addTo(map);
-
-    L.marker([-25.97, 28.12])
-        .addTo(map)
-        .bindPopup("Glen Austin, Midrand")
-        .openPopup();
-}
 });
+
